@@ -9,21 +9,24 @@ while (opcao != 3) do
   if(opcao==1)
     puts "Digite o nome da receita:"
     nome_receita = gets.chomp()
-    receitas << nome_receita
+    puts "Digite o tipo da receita: "
+    tipo_receita = gets.chomp()
+
+    receitas << {nome: nome_receita, tipo: tipo_receita}
     puts "Receita #{nome_receita} cadastrada com sucesso!"
     puts
   elsif (opcao==2)
     puts "Receitas cadastradas"
     receitas.each do |receita|
-      puts receita
+      puts "#{receita[:nome]} - #{receita[:tipo]}"
+      
   end
-  puts "[1] Cadastrar uma receita"
-  puts "[2] Ver todas as receitas"
-  puts "[3] Sair"
-  print "Digite uma opção: " #o print faz a mesma coisa que o puts mas não dá o espaço após
-  opcao = gets.to_i()
 end
-
+puts "[1] Cadastrar uma receita"
+puts "[2] Ver todas as receitas"
+puts "[3] Sair"
+print "Digite uma opção: " #o print faz a mesma coisa que o puts mas não dá o espaço após
+opcao = gets.to_i()
 end
 puts "Obrigada por usar nosso programa"
 
